@@ -10,13 +10,11 @@ const firma = {
          ime: 'Alen',
          prezime: 'Valek',
          DoB: new Date(1999, 8, 9),
-         punoIme: ime + ' ' + prezime,
       },
       {
          ime: 'Marko',
          prezime: 'Markovic',
          DoB: new Date(1999, 8, 9),
-         punoIme: ime + ' ' + prezime,
       },
    ],
    programi: ['Tečajevi', 'Studentska praksa', 'Stručna praksa'],
