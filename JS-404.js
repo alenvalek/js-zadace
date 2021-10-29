@@ -23,6 +23,7 @@ const studenti = [
 const napredna_pretraga = (lista, pojam) => {
    const pojmovi = pojam.split(' ');
    for (let i = 0; i < lista.length; i++) {
+      let isOkay = false;
       for (let j = 0; j < pojmovi.length; j++) {
          const combination =
             lista[i].ime.toLowerCase() +
@@ -34,9 +35,12 @@ const napredna_pretraga = (lista, pojam) => {
             lista[i].grad.toLowerCase().includes(pojmovi[j]) ||
             combination.includes(pojmovi[j])
          ) {
-            return i;
+            isOkay = true;
+         } else {
+            isOkay = false;
          }
       }
+      if (isOkay) return i;
    }
 };
 
@@ -44,5 +48,3 @@ console.assert(napredna_pretraga(studenti, 'ma ić') == 0); // → prvi student
 console.assert(napredna_pretraga(studenti, 'ko lić ri') == 3); // → zadnji student
 console.assert(napredna_pretraga(studenti, 'ić za') == 2); // → treći student
 console.assert(napredna_pretraga(studenti, 'ić ko la ri') == 3); // → zadnji student
-
-// Prvi student odgovara svim pretraživanjima 😂
