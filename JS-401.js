@@ -1,6 +1,6 @@
 const provjeri = (lista, pojam) => {
    for (let i = 0; i < lista.length; i++) {
-      if (lista[i].ime == pojam || lista[i].prezime == pojam) return true;
+      if (lista[i].ime == pojam || lista[i].prezime == pojam || lista[i].upisan) return true;
    }
    return false;
 };
